@@ -14,7 +14,7 @@ class AuthController extends Controller
     {
         $credentials = $request->only('email', 'password');
         if (Auth::guard('web')->attempt($credentials)) {
-            return view('formateur.index');
+            return redirect()->route('formateurs.index');
         }
         
         return redirect()->back()->withErrors(['email' => 'Invalid credentials']);

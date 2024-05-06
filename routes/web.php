@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FormateurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ Route::get('/', function () {
     return view('login.login');
 });
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::resource('formateurs',FormateurController::class);
